@@ -13,14 +13,14 @@ A deep neural network can achieve good accuracy, sometimes it suffers from the c
 
 The authors choose to use ICNet as the basic model directly and focus our work on the training data. They made a new dataset which consists of panoramic images. The new dataset the authors made is based on another dataset called [SYNTHIA](https://datasetninja.com/synthia-all). [SYNTHIA](https://datasetninja.com/synthia-all) dataset is created from computer 3D city traffic scene models and all of the images in it are virtual images. It contains some subsets called SYNTHIA-Seqs in which the images are taken by four cameras in leftward, forward, rightward and backward directions on a moving car in the virtual cities. In addition, there are images of different city scenes, seasons, weather conditions and so on. What the authors did is to stitch these four-direction images into panoramic images. 
 
-<img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/c6d6c182-dd48-408c-a3de-08e69f49042d" alt="image" width="800">
+<img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/c6d6c182-dd48-408c-a3de-08e69f49042d" alt="image" width="1000">
 
 <span style="font-size: smaller; font-style: italic;">The figure is a demonstration of the the images and labels in SYNTHIA dataset. The color of each class is
 below.</span>
 
 One way to get panoramic images is to take images from different directions around a circle and then stitch them together. When the camera rotates, the geometrical relations between the objects in the images also changes. To unify the geometrical relations of the whole scene, cylindrical projection is an important step before stitching a panoramic image. If the scene is projected on a cylindrical surface, one object in the images from different view directions can be quite the same. In this sense, when stitching the images, the overlapping parts can coincide with each other perfectly.
 
-<img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/0600411a-fd18-487b-9efb-8830436baaee" alt="image" width="800">
+<img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/0600411a-fd18-487b-9efb-8830436baaee" alt="image" width="600">
 
 <span style="font-size: smaller; font-style: italic;">The figure is a demonstration of the cylindrical projection. Every point (x, y) on the image have a corresponding point (x0, y0) on the surface of the cylinder. The corresponding point is on the line which passes the center point of the cylinder and the original point.</span>
 
@@ -28,7 +28,7 @@ The mapping built above is just cylindrical projection and the result of it is a
 
 For four images in leftward, forward, rightward and backward directions denoted as, the authors can project the normal images into a cylindrical surface, and the next step is to stitch them together. 
 
-<img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/42204474-4ad1-41fc-89be-6d271bbdd342" alt="image" width="800">
+<img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/42204474-4ad1-41fc-89be-6d271bbdd342" alt="image" width="1000">
 
 <span style="font-size: smaller; font-style: italic;">The four images and their labels in leftward, forward, rightward and backward directions are shown on the left of the figure. After the transforms, they are projected on a cylindrical surface and stitched together.</span>
 
