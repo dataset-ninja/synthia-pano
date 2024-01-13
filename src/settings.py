@@ -40,7 +40,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://github.com/Francis515/SYNTHIA-PANO"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 12525845
+PREVIEW_IMAGE_ID: int = 12531696
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/synthia-pano"
