@@ -91,7 +91,8 @@ def convert_and_upload_supervisely_project(
         labels = []
 
         subfolder_value = image_path.split("/")[-2]
-        subfolder = sly.Tag(subfolder_meta, value=subfolder_value)
+        seq_meta = seq_to_tag[subfolder_value]
+        subfolder = sly.Tag(seq_meta)
 
         # image_np = sly.imaging.image.read(image_path)[:, :, 0]
         img_height = 760  # image_np.shape[0]
@@ -103,13 +104,9 @@ def convert_and_upload_supervisely_project(
         for pixel in unique_pixels:
             obj_class = pixel_to_class.get(pixel)
             mask = mask_np == pixel
-            ret, curr_mask = connectedComponents(mask.astype("uint8"), connectivity=8)
-            for i in range(1, ret):
-                obj_mask = curr_mask == i
-                bitmap = sly.Bitmap(data=obj_mask)
-                if bitmap.area > 50:
-                    label = sly.Label(bitmap, obj_class)
-                    labels.append(label)
+            bitmap = sly.Bitmap(data=mask)
+            label = sly.Label(bitmap, obj_class)
+            labels.append(label)
 
         return sly.Annotation(img_size=(img_height, img_wight), labels=labels, img_tags=[subfolder])
 
@@ -130,10 +127,31 @@ def convert_and_upload_supervisely_project(
         15: sly.ObjClass("traffic light", sly.Bitmap, color=(0, 128, 128)),
     }
 
-    subfolder_meta = sly.TagMeta("subfolder", sly.TagValueType.ANY_STRING)
+    seqs02_fall_meta = sly.TagMeta("seqs02_fall", sly.TagValueType.NONE)
+    seqs02_summer_meta = sly.TagMeta("seqs02_summer", sly.TagValueType.NONE)
+    seqs04_fall_meta = sly.TagMeta("seqs04_fall", sly.TagValueType.NONE)
+    seqs04_summer_meta = sly.TagMeta("seqs04_summer", sly.TagValueType.NONE)
+    seqs05_summer_meta = sly.TagMeta("seqs05_summer", sly.TagValueType.NONE)
+
+    seq_to_tag = {
+        "seqs02_fall": seqs02_fall_meta,
+        "seqs02_summer": seqs02_summer_meta,
+        "seqs04_fall": seqs04_fall_meta,
+        "seqs04_summer": seqs04_summer_meta,
+        "seqs05_summer": seqs05_summer_meta,
+    }
 
     project = api.project.create(workspace_id, project_name, change_name_if_conflict=True)
-    meta = sly.ProjectMeta(obj_classes=list(pixel_to_class.values()), tag_metas=[subfolder_meta])
+    meta = sly.ProjectMeta(
+        obj_classes=list(pixel_to_class.values()),
+        tag_metas=[
+            seqs02_fall_meta,
+            seqs02_summer_meta,
+            seqs04_fall_meta,
+            seqs04_summer_meta,
+            seqs05_summer_meta,
+        ],
+    )
     api.project.update_meta(project.id, meta.to_json())
 
     dataset = api.dataset.create(project.id, ds_name, change_name_if_conflict=True)

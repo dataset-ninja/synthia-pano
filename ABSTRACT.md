@@ -1,5 +1,6 @@
 
-The authors managed to stitch the images taken from different directions into panoramic images, together with their labeled images, to yield the panoramic semantic segmentation dataset denominated as ***SYNTHIA-PANO Panoramic Image Dataset***. Panoramic images have advantages in information capacity and scene stability due to their large field of view (FoV). They propose a method to synthesize a new dataset of panoramic image. For the purpose of finding out the effect of using panoramic images as training dataset, they designed and performed a comprehensive set of experiments. Experimental results show that using panoramic images as training data is beneficial to the segmentation result. In addition, it has been shown that by using panoramic images with a 180 degree FoV as training data the model has better performance. Furthermore, the model trained with panoramic images also has a better capacity to resist the image distortion.
+The **SYNTHIA-PANO: Panoramic Image Dataset** is the panoramic version of [SYNTHIA](https://datasetninja.com/synthia-all) dataset.
+Panoramic images offer distinct advantages in terms of information capacity and scene stability, owing to their expansive field of view (FoV). To gauge the impact of incorporating panoramic images into the training dataset, the authors meticulously designed and executed a comprehensive set of experiments. The experimental findings underscore the advantageous influence of using panoramic images as training data on segmentation results. Notably, employing panoramic images with a 180-degree FoV in the training set enhances model performance. Furthermore, the model trained with panoramic images exhibits superior resilience against image distortion, showcasing an additional benefit of this approach.
 
 ## Dataset creation
 
@@ -15,8 +16,7 @@ The authors choose to use ICNet as the basic model directly and focus our work o
 
 <img src="https://github.com/dataset-ninja/synthia-pano/assets/120389559/c6d6c182-dd48-408c-a3de-08e69f49042d" alt="image" width="1000">
 
-<span style="font-size: smaller; font-style: italic;">The figure is a demonstration of the the images and labels in SYNTHIA dataset. The color of each class is
-below.</span>
+<span style="font-size: smaller; font-style: italic;">The figure is a demonstration of the the images and labels in SYNTHIA dataset. The color of each class is below.</span>
 
 One way to get panoramic images is to take images from different directions around a circle and then stitch them together. When the camera rotates, the geometrical relations between the objects in the images also changes. To unify the geometrical relations of the whole scene, cylindrical projection is an important step before stitching a panoramic image. If the scene is projected on a cylindrical surface, one object in the images from different view directions can be quite the same. In this sense, when stitching the images, the overlapping parts can coincide with each other perfectly.
 

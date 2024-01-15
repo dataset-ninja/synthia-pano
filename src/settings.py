@@ -27,11 +27,10 @@ APPLICATIONS: List[Union[Industry, Domain, Research]] = [Industry.Automotive()]
 CATEGORY: Category = Category.SelfDriving()
 
 CV_TASKS: List[CVTask] = [
-    CVTask.InstanceSegmentation(),
     CVTask.SemanticSegmentation(),
     CVTask.ObjectDetection(),
 ]
-ANNOTATION_TYPES: List[AnnotationType] = [CVTask.InstanceSegmentation()]
+ANNOTATION_TYPES: List[AnnotationType] = [CVTask.SemanticSegmentation()]
 
 RELEASE_DATE: Optional[str] = "2019-09-02"  # e.g. "YYYY-MM-DD"
 if RELEASE_DATE is None:
@@ -40,7 +39,7 @@ if RELEASE_DATE is None:
 HOMEPAGE_URL: str = "https://github.com/Francis515/SYNTHIA-PANO"
 # e.g. "https://some.com/dataset/homepage"
 
-PREVIEW_IMAGE_ID: int = 12531696
+PREVIEW_IMAGE_ID: int = 12666208
 # This should be filled AFTER uploading images to instance, just ID of any image.
 
 GITHUB_URL: str = "https://github.com/dataset-ninja/synthia-pano"
@@ -80,7 +79,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = "http://opt.zju.edu.cn/opten
 
 # Set '__PRETEXT__' or '__POSTTEXT__' as a key with string value to add custom text. e.g. SLYTAGSPLIT = {'__POSTTEXT__':'some text}
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
-    "__PRETEXT__": "Additionally, each image contains information about its ***subfolder***. Explore it in supervisely supervisely labeling tool"
+    "__PRETEXT__": "Additionally, each image contains information about its ***sequence***: ***seqs02_fall***, ***seqs02_summer***,***seqs04_fall***,***seqs04_summer***,***seqs05_summer***,. Explore it in supervisely labeling tool"
 }
 TAGS: Optional[List[str]] = None
 
