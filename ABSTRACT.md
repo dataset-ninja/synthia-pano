@@ -33,6 +33,6 @@ For four images in leftward, forward, rightward and backward directions denoted 
 
 ## Dataset description
 
-By means above, a panoramic image dataset can be obtained from the original [SYNTHIA](https://datasetninja.com/synthia-all) dataset. The authors panoramic image dataset includes five sequences of images: ***Seqs02-summer***, ***Seqs02-fall***, ***Seqs04-summer***, ***Seqs04-fall***, ***Seqs05-summer***. Seqs02 series and Seqs05 series are taken in a New York like city and Seqs04 series are taken in a European town like city. The original images are ordered video sequences and we truncated the repeated images.
+By means above, a panoramic image dataset can be obtained from the original [SYNTHIA](https://datasetninja.com/synthia-all) dataset. The authors panoramic image dataset includes five sequences of images: ***seqs02-summer***, ***seqs02-fall***, ***seqs04-summer***, ***seqs04-fall***, ***seqs05-summer***. Seqs02 series and Seqs05 series are taken in a New York like city and Seqs04 series are taken in a European town like city. The original images are ordered video sequences and we truncated the repeated images.
 
 
