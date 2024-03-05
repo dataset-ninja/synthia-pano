@@ -81,7 +81,7 @@ ORGANIZATION_URL: Optional[Union[str, List[str]]] = "http://opt.zju.edu.cn/opten
 SLYTAGSPLIT: Optional[Dict[str, Union[List[str], str]]] = {
     "sequences": ["seqs02_fall", "seqs02_summer", "seqs04_fall", "seqs04_summer", "seqs05_summer"]
 }
-TAGS: Optional[List[str]] = None
+TAGS: Optional[List[str]] = ['simulation']
 
 
 SECTION_EXPLORE_CUSTOM_DATASETS: Optional[List[str]] = None
