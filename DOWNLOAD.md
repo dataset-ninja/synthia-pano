@@ -1,6 +1,6 @@
 Dataset **SYNTHIA-PANO** can be downloaded in [Supervisely format](https://developer.supervisely.com/api-references/supervisely-annotation-json-format):
 
- [Download](https://www.dropbox.com/scl/fi/b1kt02ba3nsa2bf4i84eb/synthiapano-DatasetNinja.tar?rlkey=5o8cm65sl5mn0pda8d32bkr1x&dl=1)
+ [Download](https://assets.supervisely.com/remote/eyJsaW5rIjogImZzOi8vYXNzZXRzLzMzNTNfU1lOVEhJQS1QQU5PL3N5bnRoaWFwYW5vLURhdGFzZXROaW5qYS50YXIiLCAic2lnIjogImxpWmE4dlVnUnBkRkp2M082QXkxdDlKVTVVeVlTU1BLUmV3ellOcVM2WW89In0=)
 
 As an alternative, it can be downloaded with *dataset-tools* package:
 ``` bash
